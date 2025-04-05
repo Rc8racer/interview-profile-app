@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/interview-profile-app',
+  basePath: 'http://Rc8racer.github.io/interview-profile-app',
   supportedLocales: {
   "en-US": ""
 },
