@@ -49,7 +49,6 @@ export class HomeComponent implements OnInit {
   }
 
   onAccept(id: number) {
-    this.profiles = this.profiles.filter((profile) => profile.id !== id);
     this.snackBar.open('Profile accepted!', 'Close', { duration: 2000 });
   }
 
