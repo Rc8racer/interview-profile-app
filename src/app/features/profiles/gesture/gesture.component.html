@@ -1,0 +1,86 @@
+<div class="bg-header">
+  <!-- Header -->
+  <div class="d-flex align-items-center p-3 text-white">
+    <button
+      class="btn btn-link text-white p-0 me-3"
+      (click)="goBack()"
+      aria-label="Back"
+    >
+      <i class="bi bi-arrow-left fs-4"></i>
+    </button>
+    <h5 class="mb-0 fw-bold">Daily Recommendations</h5>
+  </div>
+
+  <!-- Card Stack Section -->
+  <div class="p-3 flex-grow-1 d-flex align-items-center justify-content-center">
+    <div class="stack-container position-relative">
+      <div
+        *ngFor="let profile of profiles; let i = index"
+        class="profile-card shadow-lg rounded position-absolute w-100"
+        [ngStyle]="{
+          'z-index': profiles.length - i,
+          transform:
+            'translateY(' + i * 10 + 'px) scale(' + (1 - i * 0.05) + ')',
+          'background-color': getBackgroundColor(i)
+        }"
+        [@stackAnimation]="
+          profile.id === likedProfileId
+            ? 'like'
+            : profile.id === dislikedProfileId
+            ? 'dislike'
+            : '*'
+        "
+      >
+        <!-- Profile Image -->
+        <img
+          [src]="profile.photos[0]"
+          class="profile-img img-fluid rounded-top w-100"
+          alt="Profile Photo"
+        />
+
+        <!-- Profile Details -->
+        <div class="p-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="verified-badge">
+              <i class="bi bi-check-circle-fill text-primary"></i> Verified
+            </span>
+            <span class="premium-badge text-purple">
+              <i class="bi bi-gem"></i> Premium NRI
+            </span>
+          </div>
+
+          <h5 class="fw-bold mt-2">{{ profile.name }}</h5>
+          <p class="text-muted mb-1">
+            {{ profile.age }} Yrs, {{ profile.height }},
+            {{ profile.education }}, {{ profile.occupation }}
+          </p>
+          <p class="text-muted">{{ profile.caste }}, {{ profile.locality }}</p>
+
+          <!-- Actions -->
+          <div class="d-flex justify-content-between mt-3">
+            <!-- Shortlist Button -->
+            <button class="btn btn-outline-dark rounded-pill px-4">
+              <i class="bi bi-star-fill"></i> Shortlist
+            </button>
+
+            <!-- Like & Dislike Buttons -->
+            <div class="d-flex gap-2">
+              <button
+                class="btn btn-outline-secondary rounded-circle p-2"
+                (click)="dislike(profile.id)"
+              >
+                <i class="bi bi-x-lg"></i>
+              </button>
+              <button
+                class="btn btn-warning rounded-circle p-2"
+                (click)="like(profile.id)"
+              >
+                <i class="bi bi-heart-fill"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

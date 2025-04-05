@@ -1,0 +1,33 @@
+.profile-carousel-img {
+    height: auto;
+    max-height: 60vh;
+    object-fit: cover;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  @media (max-width: 768px) {
+    .profile-carousel-img {
+      max-height: 40vh;
+    }
+  
+    .bg-white.rounded-top-4 {
+      padding: 1.5rem 1rem !important;
+    }
+  
+    h2.fw-bold {
+      font-size: 1.5rem;
+    }
+  
+    .fs-5 {
+      font-size: 1rem !important;
+    }
+  
+    .fs-6 {
+      font-size: 0.875rem !important;
+    }
+  
+    .btn i {
+      font-size: 1.25rem;
+    }
+  }
+  

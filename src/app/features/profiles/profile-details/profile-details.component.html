@@ -1,0 +1,97 @@
+<div
+  *ngIf="profile"
+  class="container-fluid bg-light min-vh-100 d-flex flex-column p-0 profile-detail-page"
+>
+  <!-- Header -->
+  <div class="d-flex align-items-center p-3 bg-primary text-white">
+    <button
+      class="btn btn-link text-white p-0 me-3"
+      (click)="goBack()"
+      aria-label="Back"
+    >
+      <i class="bi bi-arrow-left fs-4"></i>
+    </button>
+    <h5 class="mb-0 fw-bold">Profile Details</h5>
+  </div>
+
+  <!-- Carousel Section -->
+  <div id="profileCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div
+        *ngFor="let photo of profile.photos; let i = index"
+        class="carousel-item"
+        [ngClass]="{ active: i === 0 }"
+      >
+        <img
+          [src]="photo"
+          class="d-block w-100 profile-carousel-img img-fluid"
+          alt="Profile Photo"
+        />
+      </div>
+    </div>
+
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#profileCarousel"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#profileCarousel"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Profile Info Section -->
+  <div class="bg-white rounded-top-4 shadow-lg px-4 py-5 mt-n4">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold mb-1">{{ profile.name }}</h2>
+      <p class="text-muted mb-0 fs-6">
+        {{ profile.occupation }} | {{ profile.locality }}
+      </p>
+    </div>
+
+    <div class="row g-3 mb-4 text-center">
+      <div class="col-6 col-md-3">
+        <div class="border rounded-3 py-3 shadow-sm">
+          <p class="text-muted mb-1 small">Age</p>
+          <p class="fw-semibold fs-5 mb-0">{{ profile.age }} Yrs</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="border rounded-3 py-3 shadow-sm">
+          <p class="text-muted mb-1 small">Height</p>
+          <p class="fw-semibold fs-5 mb-0">{{ profile.height }}</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="border rounded-3 py-3 shadow-sm">
+          <p class="text-muted mb-1 small">Language</p>
+          <p class="fw-semibold fs-5 mb-0">{{ profile.language }}</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="border rounded-3 py-3 shadow-sm">
+          <p class="text-muted mb-1 small">Caste</p>
+          <p class="fw-semibold fs-5 mb-0">{{ profile.caste }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <h6 class="text-primary fw-bold mb-1">🎓 Education</h6>
+      <p class="text-dark fw-medium mb-0">{{ profile.education }}</p>
+    </div>
+
+    <div>
+      <h6 class="text-primary fw-bold mb-1">📝 About</h6>
+      <p class="text-dark lh-base">{{ profile.description }}</p>
+    </div>
+  </div>
+</div>

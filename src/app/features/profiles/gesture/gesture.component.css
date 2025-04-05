@@ -1,0 +1,24 @@
+.bg-header {
+  background: linear-gradient(to right, #20c997, #00b894);
+  height: 50%;
+}
+
+.profile-img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.stack-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-card {
+  min-height: 100%;
+}
