@@ -69,6 +69,6 @@ export class GestureComponent implements OnInit {
   }
   
   goBack() {
-    window.history.back(); // Or use Angular router.navigate if needed
+    window.history.back(); 
   }
 }

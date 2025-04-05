@@ -24,6 +24,6 @@ export class ProfileDetailsComponent implements OnInit {
   }
 
   goBack(): void {
-    this.router.navigate(['/']); // Or navigate back based on user flow
+    this.router.navigate(['/']); 
   }
 }
