@@ -1,0 +1,43 @@
+/* Main Container */
+.main-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #008cff, #0072e3);
+  color: white;
+  padding-bottom: 20px;
+}
+
+/* Profile Card */
+.profile-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background: white;
+  color: black;
+}
+
+/* Mobile View - Horizontal Scroll */
+@media (max-width: 768px) {
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .col-10 {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .profile-card {
+    min-width: 100%;
+    /* max-width: 85%; */
+  }
+}
+
+.pic {
+  object-fit: cover;
+  height: 220px;
+  width: 100%;
+}
+
