@@ -1,0 +1,6 @@
+{
+  "routes": {
+    "/interview-profile-app": {},
+    "/interview-profile-app/gesture": {}
+  }
+}
